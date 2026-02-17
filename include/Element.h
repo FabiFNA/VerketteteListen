@@ -16,7 +16,7 @@ public:
     void setNext(Element* e);
 
     //getter
-    void getNumber();
+    int getNumber();
     Element* getNext();
 };
 

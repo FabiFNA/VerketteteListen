@@ -32,14 +32,36 @@ void Liste::einfuegenEnde(Element* e)
 
 void Liste::entferneAnfang()
 {
+    if (kopfzeiger == nullptr) return;
+
+    kopfzeiger = kopfzeiger->getNext();
 }
 
 void Liste::entferneEnde()
 {
+    Element* tmp = this->kopfzeiger;
+    
+    while (tmp->getNext()->getNext() != nullptr)
+    {
+        tmp = tmp->getNext();
+    }
+    tmp->setNext(nullptr);
 }
 
 Element *Liste::sucheElement(int a)
 {
+    Element* tmp = kopfzeiger;
+
+    while (tmp->getNext() != nullptr)
+    {
+        if(tmp->getNumber() == a)
+        {
+            return tmp;
+        }
+
+        tmp = tmp->getNext();
+    }
+
     return nullptr;
 }
 

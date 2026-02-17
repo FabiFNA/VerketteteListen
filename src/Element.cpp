@@ -28,9 +28,10 @@ void Element::setNext(Element *e)
     this->next = e;
 }
 
-void Element::getNumber()
+int Element::getNumber()
 {
-    cout << "Zahl: " << this->number << endl;
+    //cout << "Zahl: " << this->number << endl;
+    return this->number;
 }
 
 Element* Element::getNext()
