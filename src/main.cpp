@@ -6,23 +6,43 @@ using namespace std;
 
 int main()
 {
-    Element e1(15);
-    Element e2(20);
-    Element e3(25);
-    Element e4(30);
+    Element schueler1(15);
+    Element schueler2(20);
+    Element schueler3(25);
+    Element schueler4(30);
+    
+    /*
+    
+    // Element* paul = new Element(10);
+    Element schueler1(10);
+    Element schueler2(10);
+    Element schueler3(10);
+    Element schueler4(10);
+    */
 
-    Liste l(&e1);
+    Liste kurs(&schueler1);
 
-    l.einfuegenEnde(&e2);
-    l.einfuegenEnde(&e3);
-    l.einfuegenAnfang(&e4);
+    kurs.einfuegenEnde(&schueler2);
+    kurs.einfuegenEnde(&schueler3);
+    kurs.einfuegenAnfang(&schueler4);
 
     // Reihenfolge: e4, e1, e2, e3
 
     //l.ausgabe();
 
-    e1.getNext();
-    e2.getNext();
-    e3.getNext();
-    e4.getNext();
+    schueler1.getNext();
+    schueler2.getNext();
+    schueler3.getNext();
+    schueler4.getNext();
+
+    cout << schueler1.getNext()->getNumber() << endl;
+    cout << "Durchschnitt: " << kurs.calcAvgNum() << endl;
+
+    /*
+    cout << schueler1.getNumber() << endl;
+    cout << schueler2.getNumber() << endl;
+    cout << schueler3.getNumber() << endl;
+    cout << schueler4.getNumber() << endl;
+    */
+
 }

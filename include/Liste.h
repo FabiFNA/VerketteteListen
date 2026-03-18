@@ -20,4 +20,6 @@ public:
     Element* sucheElement(int a);
 
     void ausgabe();
+
+    float calcAvgNum();
 };

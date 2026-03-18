@@ -21,6 +21,12 @@ void Liste::einfuegenAnfang(Element *e)
 
 void Liste::einfuegenEnde(Element* e)
 {
+    if (kopfzeiger == nullptr)
+    {
+        kopfzeiger = e;
+        return;
+    }
+
     Element* tmp = this->kopfzeiger;
     
     while (tmp->getNext() != nullptr)
@@ -74,4 +80,24 @@ void Liste::ausgabe()
         cout << "Element Adresse: " << tmp << endl << "Element Zahl: " << tmp->getNext() << endl << endl;
         tmp = tmp->getNext();
     }
+}
+
+float Liste::calcAvgNum()
+{
+    Element* tmp = kopfzeiger;
+    int zaehler = 0;
+    float durchschnitt = 0.0;
+
+    if (kopfzeiger == nullptr) return 0.0;
+
+    while (tmp != nullptr)
+    {
+        durchschnitt += tmp->getNumber();
+        tmp = tmp->getNext();
+        zaehler++;
+    }
+
+    durchschnitt = durchschnitt / zaehler;
+
+    return durchschnitt;
 }
