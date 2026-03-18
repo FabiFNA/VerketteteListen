@@ -28,14 +28,9 @@ int main()
 
     // Reihenfolge: e4, e1, e2, e3
 
-    //l.ausgabe();
+    kurs.ausgabe();
 
-    schueler1.getNext();
-    schueler2.getNext();
-    schueler3.getNext();
-    schueler4.getNext();
-
-    cout << schueler1.getNext()->getNumber() << endl;
+    //cout << schueler1.getNext()->getNumber() << endl;
     cout << "Durchschnitt: " << kurs.calcAvgNum() << endl;
 
     /*

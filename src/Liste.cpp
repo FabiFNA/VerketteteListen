@@ -17,6 +17,7 @@ void Liste::einfuegenAnfang(Element *e)
     Element* tmp = this->kopfzeiger; // alten head speichern
     e->setNext(tmp); // alten head als nachfolger speichern
     this->kopfzeiger = e; // neues element zum head machen
+    tmp->setPrevious(e); // für doppeltverkettete listen
 }
 
 void Liste::einfuegenEnde(Element* e)
@@ -34,6 +35,7 @@ void Liste::einfuegenEnde(Element* e)
         tmp = tmp->getNext();
     }
     tmp->setNext(e);
+    e->setPrevious(tmp);
 }
 
 void Liste::entferneAnfang()
@@ -41,6 +43,7 @@ void Liste::entferneAnfang()
     if (kopfzeiger == nullptr) return;
 
     kopfzeiger = kopfzeiger->getNext();
+    kopfzeiger->setPrevious(nullptr);
 }
 
 void Liste::entferneEnde()
@@ -51,6 +54,7 @@ void Liste::entferneEnde()
     {
         tmp = tmp->getNext();
     }
+    tmp->getNext()->setPrevious(nullptr);
     tmp->setNext(nullptr);
 }
 
@@ -77,7 +81,12 @@ void Liste::ausgabe()
 
     while (tmp->getNext() != nullptr)
     {
-        cout << "Element Adresse: " << tmp << endl << "Element Zahl: " << tmp->getNext() << endl << endl;
+        cout    << "Element Adresse: " << tmp << endl
+                << "Element Zahl: " << tmp->getNumber() << endl 
+                << "Element Next: " << tmp->getNext() << endl
+                << "Element Previous: " << tmp->getPrevious() << endl
+                << endl;
+                
         tmp = tmp->getNext();
     }
 }

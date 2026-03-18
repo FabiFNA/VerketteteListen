@@ -5,6 +5,7 @@ class Element
 private:
     int number;
     Element* next;
+    Element* previous;
 
 public:
     Element();
@@ -14,10 +15,12 @@ public:
     //setter
     void addNumber(int n);
     void setNext(Element* e);
+    void setPrevious(Element* e);
 
     //getter
     int getNumber();
     Element* getNext();
+    Element* getPrevious();
 };
 
 #pragma end
