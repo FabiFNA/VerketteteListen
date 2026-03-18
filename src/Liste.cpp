@@ -79,7 +79,7 @@ void Liste::ausgabe()
 {
     Element* tmp = this->kopfzeiger;
 
-    while (tmp->getNext() != nullptr)
+    while (tmp != nullptr)
     {
         cout    << "Element Adresse: " << tmp << endl
                 << "Element Zahl: " << tmp->getNumber() << endl 
